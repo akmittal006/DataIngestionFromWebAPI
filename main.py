@@ -77,7 +77,7 @@ def run(argv=None):
 		'--input_subscription', required=True,
 		help='Input PubSub subscription of the form "projects/<PROJECT>/subscriptions/<SUBSCRIPTION>".')
 	known_args, pipeline_args = parser.parse_known_args(argv)
-
+	#beam pipeline 
 	with beam.Pipeline(argv=pipeline_args) as p:
 		lines = ( p | beam.io.ReadStringsFromPubSub(subscription=known_args.input_subscription)
 					| beam.Map(parse_pubsub)

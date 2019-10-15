@@ -1,0 +1,10 @@
+gsutil -m acl ch -r -u ak.chatterjee@tatasteel.com:R gs://tsl_datalake/AMDS
+request-->
+//ab@gmail.com   tsl_datalake/AMDS and tsl_datalake/LDProcess
+
+//give permission to existing files
+gsutil -m acl ch -r -u abc@gmail.com:R gs://abc_datalke/abc
+gsutil -m acl ch -r -u abc@gmail.com:R gs://tsl_datalake/LDProcess
+
+
+//make sure if new files come into same folder, same access should be granted
